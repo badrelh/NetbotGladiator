@@ -1,4 +1,4 @@
-Domains: [https://www.google.com, https://www.eirb.fr]
+Domains: [https://www.google.com, https://www.example.com]
 Defacement_fetch_params:
   timout: 10
   interval: 3600
