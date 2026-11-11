@@ -1,0 +1,12 @@
+typer
+rich
+requests
+urllib3
+PyYAML
+pandas
+matplotlib
+shodan
+colorlog
+pytest
+black
+ruff

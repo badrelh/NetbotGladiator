@@ -1,0 +1,36 @@
+#config
+Domains: [https://www.google.com]
+mail_Controller: controller@example.com
+Ddos_fetch_params:
+  timeout: 10         # seconds for HTTP requests
+  collection_intervall: 10
+  interval: 600       # seconds between collection cycles (used by collector)
+  window_minutes: 60  # window used for baseline comparison in minutes
+  min_samples: 10     # minimal historical samples required to decide
+  latency_factor: 1.5 # multiplier for average (or use std-based logic)
+  std_multiplier: 2   # multiplier for std deviation when using avg + k*std
+  error_multiplier: 2 # detect if recent errors > error_multiplier * baseline_errors
+  min_error_threshold: 3 # if baseline errors ~0 and recent errors > this => alert
+database:
+  path: "monitoring.db"
+#Defacement monitoring parameters
+Defacement_fetch_params:
+  timout: 10
+  interval: 3600
+#MAil configuration
+#!include mail.yaml
+#Certificate expiration monitoring parameters
+certificates:
+  port: 443
+  alert_threshold_days: 21
+  interval: 86400 # Check every 24 hours
+# mail config
+email_config:
+  smtp_server: "smtp.gmail.com"    # For gmail SMTP server
+  smtp_port: 587                   # SMTP port
+  sender_email: "user@example.com" # An actif email adress
+  sender_password: "YOUR_APP_PASSWORD" # The App password, if you're using gmail, you can generate one from your gmail account
+  default_receiver: "receiver@example" # the receiver that aim to notify
+message_defaults:
+  default_subject: "Automated Report from System"
+  default_body: "Please find the attached report."

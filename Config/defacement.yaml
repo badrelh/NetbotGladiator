@@ -1,0 +1,6 @@
+Domains: [https://www.google.com, https://www.eirb.fr]
+Defacement_fetch_params:
+  timout: 10
+  interval: 3600
+# Email notification settings
+mail_file: "mail.yaml"

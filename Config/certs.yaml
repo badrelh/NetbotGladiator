@@ -1,0 +1,8 @@
+certificates:
+  domains:
+    - https://www.google.com
+    - https://expired.badssl.com
+  port: 443
+  alert_threshold_days: 21
+  interval: 05 #86400
+mail_file: "mail.yaml"

@@ -1,0 +1,18 @@
+Domains: [https://www.google.com]
+Ddos_fetch_params:
+  timeout: 10         # seconds for HTTP requests
+  collection_intervall: 10
+  interval: 600       # seconds between collection cycles (used by collector)
+  window_minutes: 60  # window used for baseline comparison in minutes
+  min_samples: 10     # minimal historical samples required to decide
+  latency_factor: 1.5 # multiplier for average (or use std-based logic)
+  std_multiplier: 2   # multiplier for std deviation when using avg + k*std
+  error_multiplier: 2 # detect if recent errors > error_multiplier * baseline_errors
+  min_error_threshold: 3 # if baseline errors ~0 and recent errors > this => alert
+database:
+  path: "monitoring.db"
+ddos_graphics_params:
+  window_minutes : 60
+# Email notification settings
+# Set up your email config,
+mail_file: "mail.yaml"
